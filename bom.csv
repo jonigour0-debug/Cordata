@@ -1,1 +1,25 @@
 
+Item No.,Category,Qty,Component,Specification,Purpose,Status / Notes
+01,Main controller,1,ESP32 DevKit V1 (Bluetooth + Wi-Fi),3.3 V logic; USB programming,Robot control and wireless commands,Required
+02,Motor driver,1,L298N dual H-bridge module,For 2 DC motors; heatsink module,Drive the left/right motors,Required for starter build; TB6612FNG is a more efficient alternative
+03,DC gear motor,4,TT yellow gear motor,Match voltage and speed across motors,Robot movement,Required; use 2 motors if building a 2-wheel chassis
+04,Wheel,4,Robot wheel compatible with TT motor,Approx. 65 mm; match motor shaft,Traction and movement,Required
+05,Chassis,1,4-wheel robot chassis plate set,Acrylic or metal; motor mounting holes,Mechanical frame,Required
+06,Caster/support,1,Caster wheel or skid,For chassis balance,Support the chassis,Optional depending on chassis
+07,Distance sensor,1,HC-SR04 ultrasonic module,Echo output is 5 V,Front obstacle distance sensing,Required for starter obstacle sensing; use voltage divider on Echo
+08,Echo voltage divider,1,Resistors 1 kΩ and 2 kΩ,Connect as divider from HC-SR04 Echo to ESP32 input,Reduce Echo voltage to ESP32-safe level,Required with 5 V Echo sensor
+09,Camera,1,ESP32-CAM (AI Thinker) or compatible camera module,Camera board may need separate programming/power setup,Image capture / future video,Optional for first movement test; choose camera board before final PCB
+10,Display,1,0.96-inch OLED SSD1306 I2C,128×64; address often 0x3C,Robot status and distance display,Required for display feature
+11,Battery,1,Battery pack matched to motor voltage and current,Choose chemistry/capacity based on motor specs; protected pack recommended,Power motors and electronics,Required; do not select voltage until motor ratings are confirmed
+12,Battery holder/connector,1,Suitable holder or keyed connector,Match battery pack,Secure battery connection,Required as appropriate to chosen pack
+13,Power switch,1,DC-rated switch,Current rating above system load,Main power on/off,Required
+14,5 V regulator,1,Buck converter module,Input range matches battery; stable 5 V output,Power logic/camera if needed,Recommended; avoid powering motors from ESP32 5 V pin
+15,3.3 V regulator,1,Regulator module if required,Only if board/module supply needs it,Provide suitable logic supply,Usually not needed for ESP32 DevKit; verify module requirements
+16,Prototype wiring,1,Jumper wires / silicone wires,Male-female and suitable current gauge,Connect modules,Required
+17,Mounting hardware,1,"M3 screws, nuts, spacers",Assorted lengths,Mount boards and chassis layers,Required
+18,Breadboard / prototype board,1,Small breadboard or perfboard,For temporary wiring,Prototype connections,Optional; not a substitute for a final PCB
+19,Bluetooth control app,1,Bluetooth serial terminal app,Android phone,Send text commands during testing,Software
+20,Firmware,1,Arduino IDE + ESP32 board package,Install SSD1306 and Adafruit GFX libraries for OLED,Robot control program,Software
+21,AI / voice host,1,Android phone or separate computer/cloud service,Speech recognition and AI require software/service integration,Voice conversation and AI responses,Optional advanced feature; not provided by ESP32 starter firmware
+22,Camera mount,1,Adjustable camera bracket,Match selected camera board,Aim camera safely,Optional
+23,PCB,1,Custom CORDATA PCB (later revision),"Finalize schematic, footprints, power and connectors first",Organize wiring for a refined build,Optional; design only after prototype is tested
